@@ -170,7 +170,7 @@ class AlienInvasion:
 
         # Get rid of bullets that have disappeared.
         for bullet in self.bullets.copy():
-            if bullet.rect.left >= self.screen.get_rect().right:
+            if bullet.rect.left >= self.sb.background_rect.left:
                 self.bullets.remove(bullet)
 
         self._check_bullet_alien_collisions()
@@ -251,7 +251,7 @@ class AlienInvasion:
 
         # Determine the number of columns of aliens that fit on the screen.
         ship_width = self.ship.rect.width
-        available_space_x = (self.settings.screen_width - (3 * alien_width) - ship_width)
+        available_space_x = (self.settings.screen_width - (10 * alien_width) - ship_width)
         number_columns = available_space_x // (2 * alien_width)
 
         return number_aliens_y, number_columns
@@ -262,7 +262,7 @@ class AlienInvasion:
         alien_width, alien_height = alien.rect.size
         alien.y = alien_height + 2 * alien_height * alien_number
         alien.rect.y = alien.y
-        alien.rect.x = 200 + alien.rect.width + 2 * alien.rect.width * row_number
+        alien.rect.x = 400 + alien.rect.width + 2 * alien.rect.width * row_number
         self.aliens.add(alien)
 
     def _check_fleet_edges(self):

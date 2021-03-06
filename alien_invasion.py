@@ -237,6 +237,7 @@ class AlienInvasion:
             for alien_number in range(number_aliens_y):
                 self._create_alien(alien_number, column_number)
 
+
     def _alien_setup(self):
         """
         Determines the number of columns of aliens

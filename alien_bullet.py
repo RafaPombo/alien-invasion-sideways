@@ -13,13 +13,13 @@ class AlienBullet(Sprite):
 
         self.rect = pygame.Rect(0, 0, self.settings.alien_bullet_width, self.settings.alien_bullet_height)
 
-        self.rect.midbottom = alien.rect.midbottom
+        self.rect.midleft = alien.rect.midleft
 
-        self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
 
     def update(self):
-        self.y += self.settings.alien_bullet_speed
-        self.rect.y = self.y
+        self.x -= self.settings.alien_bullet_speed
+        self.rect.x = self.x
 
     def draw_bullet(self):
         pygame.draw.rect(self.screen, self.color, self.rect)

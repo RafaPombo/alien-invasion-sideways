@@ -237,7 +237,6 @@ class AlienInvasion:
             for alien_number in range(number_aliens_y):
                 self._create_alien(alien_number, column_number)
 
-
     def _alien_setup(self):
         """
         Determines the number of columns of aliens
@@ -263,7 +262,7 @@ class AlienInvasion:
         alien_width, alien_height = alien.rect.size
         alien.y = alien_height + 2 * alien_height * alien_number
         alien.rect.y = alien.y
-        alien.rect.x = alien.rect.width + 2 * alien.rect.width * row_number
+        alien.rect.x = 200 + alien.rect.width + 2 * alien.rect.width * row_number
         self.aliens.add(alien)
 
     def _check_fleet_edges(self):
